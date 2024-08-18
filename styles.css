@@ -38,6 +38,7 @@ body {
   color: var(--text-color);
   font-weight: 500;
   padding: 10px 20px;
+  
 }
 .navbar-nav .nav-link:hover {
   color: var(--hover-color) !important;
@@ -49,23 +50,25 @@ body {
 }
 
 section {
-  padding: 10px 10%;
+  padding: 10px 8%;
 }
+
 /* Home Section */
-.home-content {
-  margin-top: 110px;
-}
+
 .home {
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column-reverse; /* Mobile-first: Image at the top */
   align-items: center;
-  grid-gap: 4em;
+  justify-content: center;
+  padding: 20px;
 }
 .home-content {
-  max-width: 600px;
+  flex: 1;
+  order: 1;
+}
+.home-img{
+   flex: 1;
+  order: 2;
 }
 .home-content h1 {
   font-size: var(--big-font);
@@ -91,6 +94,7 @@ section {
   display: flex;
   opacity: 0;
 }
+
 
 /* Annimation */
 .change-text h3 .word .letter {
@@ -179,6 +183,25 @@ a.btn:nth-child(2):hover {
 a.btn:nth-child(2)::before {
   background: var(--hover-color);
 }
+/* Keyframes for up-and-down animation */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust the value for more or less movement */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to home-img img */
+.home-img img {
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px -6px var(--hover-color);
+  animation: moveUpDown 5s ease-in-out infinite; /* Adjust the duration as needed */
+}
 
 /* Social Icons */
 .social-icons {
@@ -254,6 +277,9 @@ img-box {
   border-radius: 10px;
   box-shadow: 0px 10px 10px -6px var(--hover-color);
 }
+.about-content{
+  margin-left: 85px;
+}
 .about-content span {
   color: #fdfdfd;
   font-size: 0.8rem;
@@ -299,11 +325,11 @@ img-box {
   top: 44%;
 }
 .info-about2 {
-  left: 76%;
+  left: 80%;
   top: 15%;
 }
 .info-about3 {
-  left: 71%;
+  left: 75%;
   top: 70%;
 }
 .img-about span {
@@ -388,10 +414,9 @@ img-box {
 }
 .skill-main {
   width: 100%;
-  display: grid;
+
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 30px;
-  grid-column-gap: 50px;
+
 }
 
 .skill-bar {
@@ -492,6 +517,114 @@ img-box {
   animation: glow 0.04s linear forwards;
   animation-delay: calc(var(--i) * 0.05s);
 }
+
+/* Portfolio Section------------------------------- */
+.filter-buttons{
+  margin: 2rem;
+  text-align: center;
+  color: var(--text-color) !important;
+}
+.filter-buttons .btn{
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  letter-spacing: .4px;
+  margin-left: 1.1rem;
+  color: var(--text-color) !important;
+  transition: 0.5s;
+}
+.filter-buttons .btn:hover{
+ color: #12f7ff !important;
+}
+.portfolio-gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.port-box{
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #292e33;
+  display: flex;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  border: 2px solid var(--hover-color);
+  box-shadow: var(--neon-box-shaddow);
+}
+.port-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.port-img img{
+  width: 100%;
+  height: 100%;
+  opacity: 0.5s;
+  transition: 0.5s;
+}
+.port-content{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), #12f7ff);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.5s;
+padding: 0.2rem;
+}
+.port-box:hover .port-content{
+opacity: 1;
+}
+.port-box:hover .port-img img{
+  transform: scale(1.1);
+}
+.port-content h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.port-content p{
+  font-size: 0.8rem;
+  padding: 5px 0 15px 0;
+}
+.port-content a{
+  background: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--hover-color);
+  outline: 2px solid #fff;
+}
+.port-content a i{
+  font-size: 1.3rem;
+  color: var(--second-bg-color);
+}   
+
+
+
+
+
+
+
+
+
+
+
 
 /* KeyFrames */
 
