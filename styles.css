@@ -65,10 +65,12 @@ section {
 .home-content {
   flex: 1;
   order: 1;
+  animation: fadeInUp 1s ease-out;
 }
 .home-img{
    flex: 1;
   order: 2;
+  animation: fadeInRight 1.5s ease-in;
 }
 .home-content h1 {
   font-size: var(--big-font);
@@ -203,6 +205,42 @@ a.btn:nth-child(2)::before {
   animation: moveUpDown 5s ease-in-out infinite; /* Adjust the duration as needed */
 }
 
+/* Fade Animation----------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+
+
+
 /* Social Icons */
 .social-icons {
   margin-top: 6rem;
@@ -279,6 +317,7 @@ img-box {
 }
 .about-content{
   margin-left: 85px;
+  animation: fadeInUp 1.5s ease-in;;
 }
 .about-content span {
   color: #fdfdfd;
@@ -337,6 +376,9 @@ img-box {
   font-size: 1rem;
   font-weight: 600;
 }
+.img-about{
+  animation: fadeInRight 1.5s ease-in;
+}
 
 /* Services Section */
 .services {
@@ -360,7 +402,9 @@ img-box {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
+.services-box{
+  animation: fadeInRight 1.5s ease-in;
+}
 .section-services {
   display: flex;
   justify-content: center;
@@ -368,6 +412,7 @@ img-box {
   flex-wrap: wrap;
   grid-gap: 2rem;
   margin-top: 40px;
+ 
 }
 .section-services .services-box {
   flex: 1 1 18rem;
@@ -417,6 +462,9 @@ img-box {
 
   grid-template-columns: repeat(2, 1fr);
 
+}
+.skill-left{
+  animation: fadeInLeft 1.5s ease-in;
 }
 
 .skill-bar {
@@ -469,6 +517,9 @@ img-box {
   animation: css 8s;
 }
 /* Skills Right */
+.skill-right{
+  animation: fadeInRight 1.5s ease-in;
+}
 .professional {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -561,6 +612,7 @@ img-box {
   justify-content: center;
   height: 100%;
   width: 100%;
+  animation: fadeInLeft 1.5s ease-in;
 }
 .port-img img{
   width: 100%;
@@ -576,6 +628,7 @@ img-box {
   height: 100%;
   opacity: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.2), #12f7ff);
+  animation: fadeInRight 1.5s ease-in;
 
   display: flex;
   align-items: center;
@@ -615,6 +668,71 @@ opacity: 1;
   color: var(--second-bg-color);
 }   
 
+/* Reviews Section-------------------------- */
+.review-slider {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.review-name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.review-profession {
+  font-size: 1em;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-size: 1em;
+  color: #555;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
 
 
 
