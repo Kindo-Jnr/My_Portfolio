@@ -110,3 +110,7 @@ nextButton.addEventListener('click', () => {
 setInterval(() => {
     nextButton.click();
 }, 5000); // Slide every 5 seconds
+
+
+// Fade In Animation
+AOS.init();
