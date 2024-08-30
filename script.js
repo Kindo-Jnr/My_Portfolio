@@ -76,41 +76,7 @@ circles.forEach(elem => {
 // Mix it up Section----------
 var mixer = mixitup('.portfolio-gallery')
 
-// Sider Section----------
-const sliderWrapper = document.querySelector('.slider-wrapper');
-const reviewCards = document.querySelectorAll('.review-card');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-
-let currentIndex = 0;
-
-function showCard(index) {
-    sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
-}
-
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = reviewCards.length - 1;
-    }
-    showCard(currentIndex);
-});
-
-nextButton.addEventListener('click', () => {
-    if (currentIndex < reviewCards.length - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0;
-    }
-    showCard(currentIndex);
-});
-
-// Optional: Auto-slide functionality
-setInterval(() => {
-    nextButton.click();
-}, 5000); // Slide every 5 seconds
+// swipper Section----------
 
 
-// Fade In Animation
-AOS.init();
+
