@@ -139,11 +139,11 @@ section {
   width: 320px;
   height: 45px;
 }
-.btn-box a.btn {
+.btn-box .btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: 180px;
   height: 100%;
   background: var(--hover-color);
   color: var(--bg-color);
@@ -158,10 +158,10 @@ section {
   z-index: 1;
   border: 2px solid var(--hover-color);
 }
-a.btn:hover {
+.btn:hover {
   color: var(--hover-color);
 }
-a.btn::before {
+.btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -172,17 +172,17 @@ a.btn::before {
   z-index: -1;
   transition: 0.4s;
 }
-a.btn:hover::before {
+.btn:hover::before {
   width: 100%;
 }
-a.btn:nth-child(2) {
+.btn:nth-child(2) {
   background: var(--bg-color);
   color: var(--hover-color);
 }
-a.btn:nth-child(2):hover {
+.btn:nth-child(2):hover {
   color: var(--bg-color);
 }
-a.btn:nth-child(2)::before {
+.btn:nth-child(2)::before {
   background: var(--hover-color);
 }
 /* Keyframes for up-and-down animation */
@@ -728,7 +728,7 @@ opacity: 1;
 .info-item a{
   text-decoration: none;
   color: #12f7ff;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .info-item a:hover{
   color: #fff;
@@ -743,16 +743,76 @@ opacity: 1;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: var(--bs-body-color);
+    color: var(--text-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--bs-body-bg);
+    background: var(--second-bg-color);
     background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
+    border: 1px solid var(--hover-color);
+    border-radius: 5px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+.contact form textarea{
+  resize: none;
+}
+.col-lg-8 form input::placeholder,
+.col-lg-8 form textarea::placeholder {
+  color: #fff;
+}
+
+.formBtn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Footer Section----------- */
+footer{
+  padding: 1.5rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p{
+  color: #bdbdbd;
+  }
+  footer a{
+    display: inline-flex;
+    justify-content: center;
+    color: var(--text-color);
+    background: var(--hover-color);
+    padding: .6rem;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  footer a i{
+    font-size: 1rem;
+    color: var(--second-bg-color);
+  }
+footer a:hover{
+  background: var(--second-bg-color);
+  color: var(--hover-color);
+  }
+  footer a i:hover{
+    color: var(--hover-color);
+    font-size: 1.2rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* KeyFrames */
 
