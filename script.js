@@ -51,6 +51,42 @@ Array.from(nextWord.children).forEach((letter, i) => {
 changeText();
 setInterval(changeText, 3000);
 
+// Experience Section Tabs---------------------
+function openExperience(evt, jobName) {
+    var i, tabcontent, tablinks;
+  
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+  
+    // Remove active class from all tab buttons
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the selected tab content and add active class to the button
+    document.getElementById(jobName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+  // Automatically open the first tab when the page loads
+  document.getElementById("defaultOpen").click();
+  
+  function toggleText(button) {
+    var fullText = button.previousElementSibling;
+  
+    if (fullText.style.display === "none" || fullText.style.display === "") {
+        fullText.style.display = "block";
+        button.textContent = "Read Less";
+    } else {
+        fullText.style.display = "none";
+        button.textContent = "Read More";
+    }
+  }
+  
 
 //  Professionlal Skills Glow
 const circles = document.querySelectorAll('.circle');

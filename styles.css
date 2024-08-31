@@ -320,7 +320,7 @@ img-box {
   border: 1px solid var(--hover-color);
   outline: 2px solid var(--bg-color);
   z-index: 100;
-  animation: morph 6s linear infinite;
+  animation: morph 5s linear infinite;
 }
 
 .info-about1 {
@@ -363,10 +363,7 @@ img-box {
   }
 }
 
-/* Services Section */
-.services {
-  padding-bottom: 40px;
-}
+/* Titles and Sub-Headings---------------- */
 .main-text {
   width: 100%;
   text-align: center;
@@ -385,34 +382,109 @@ img-box {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.services-box{
-  animation: fadeInRight 1.5s ease-in;
+
+/* Experience Section ------------------- */
+.experiences {
+  width: 100%;
+  padding-bottom: 40px;
+  margin: 0 auto;
+
 }
-.section-services {
+
+.tab {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  grid-gap: 2rem;
-  margin-top: 40px;
+  background-color: #333;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab button {
+  background-color: inherit;
+  color: #fdfdfd;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: background-color 0.5s, transform 0.2s;
+  font-size: 16px;
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #444;
+}
+
+.tab button:last-child {
+  border-right: none;
+}
+
+.tab button:hover {
+  background-color: #575757;
+  transform: scale(1.05);
+}
+
+.tab button.active {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+  
+  transform: scale(1.1);
+}
+
+.tabcontent {
+  display: none;
+  padding: 16px;
+  border: none;
+  border-top: none;
+  animation: fadeEffect 0.5s;
+  background-color: var(--bg-color);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 10px 10px -6px var(--hover-color);
  
 }
-.section-services .services-box {
-  flex: 1 1 18rem;
-  padding: 2rem 1rem 2rem;
-  text-align: center;
-  background: var(--second-bg-color);
-  transition: transform 0.4s;
-  border-radius: 10px;
+
+.tabcontent h3 {
+  margin-top: 0;
+  color: #fdfdfd;
 }
-.service-btn {
-  width: auto;
-  justify-content: center;
+
+.tabcontent p {
+  color: #fdfdfd;
 }
-.services-box:hover {
-  transform: translateY(-0.7rem);
+
+.excerpt {
+  margin-bottom: 5px;
 }
-.service-icon {
+
+.full-text {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.read-more-btn {
+  background-color: #12f7ff;
+  color:#250821;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #007ea7;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.icon-container {
+  display: flex;
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically if needed */
+  margin-bottom: 16px; /* Space below the icon */
+}
+.tab-icon {
   border: 2px solid var(--hover-color);
   padding: 2rem;
   background: var(--bg-color);
@@ -423,18 +495,32 @@ img-box {
   color: var(--hover-color);
   box-shadow: var(--neon-box-shaddow);
   outline: 3px solid var(--bg-color);
+ 
 }
-.services-box h3 {
-  margin-top: 10px;
-  font-size: 1.5rem;
+/* Mobile View */
+@media (max-width: 990px) {
+  .tab button {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+  .tabcontent {
+      padding: 12px;
+  }
+  .tabcontent p{
+    font-size: 0.9rem;
+  }
+  .tab-icon {
+      font-size: 40px;
+  }
+
+  .read-more-btn {
+      width: 70%;
+      padding: 12px;
+      font-size: 16px;
+  }
 }
-.services-box p {
-  margin: 0.5rem 0 1.5rem 0;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #bdbdbd;
-  line-height: 1.6;
-}
+/* End----------------- */
+
 
 /* Skills Section -----------*/
 .skills {
@@ -499,7 +585,7 @@ img-box {
 }
 
 .skill-bar .bar .css {
-  width: 86%;
+  width: 52%;
   animation: css 8s;
 }
 /* Skills Right */
@@ -699,7 +785,7 @@ opacity: 1;
   color: #12f7ff;
   background: 
   color-mix(in srgb, #12f7ff, transparent 92%);
-  font-size: 20px;
+  font-size: 24px;
   width: 44px;
   height: 44px;
   display: flex;
@@ -798,8 +884,21 @@ footer a:hover{
     color: var(--hover-color);
     font-size: 1.2rem;
   }
+/* mobile View---------------- */
+@media (max-width: 990px) {
+  footer {
+      padding: 15px;
+  }
 
+  footer p {
+      font-size: 12px;
+      margin-bottom: 8px;
+  }
 
+  footer a {
+      font-size: 20px;
+  }
+}
 
 
 

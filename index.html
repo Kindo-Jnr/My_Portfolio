@@ -64,11 +64,12 @@
               <a class="nav-link text-white" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#skills">Skills</a>
+              <a class="nav-link text-white" href="#experience">Expereince</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#services">Services</a>
+              <a class="nav-link text-white" href="#skills">Skills</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link text-white" href="#projects">Projects</a>
             </li>
@@ -164,10 +165,10 @@
                 design. I specialize in UX/UI design, branding, and digital
                 creations. My ability to combine technical skills with creative
                 thinking enables me to create visually appealing and
-                user-friendly interfaces. I'm eager to contribute my skills to a dynamic
-                team and work on innovative projects. My goal is to leverage my
-                expertise to create impactful and user-centric digital
-                solutions.
+                user-friendly interfaces. I'm eager to contribute my skills to a
+                dynamic team and work on innovative projects. My goal is to
+                leverage my expertise to create impactful and user-centric
+                digital solutions.
               </p>
               <div class="btn-box mt-3 d-flex justify-content-center">
                 <a href="#" class="btn btn-primary me-3">Download CV</a>
@@ -181,49 +182,129 @@
 
     <!-- Services Section -->
     <section
-      class="services"
-      id="services"
+      class="experiences"
+      id="experience"
       data-aos="fade-down"
       data-aos-easing="ease-in-sine"
       data-aos-duration="1000"
     >
       <div class="main-text">
-        <span>What will i do for You</span>
-        <h2>Our Services</h2>
+        <span>where i have worked</span>
+        <h2>Expereince</h2>
       </div>
-      <div class="section-services">
-        <div class="services-box">
-          <i class="bx bxs-layer service-icon"></i>
-          <h3>Web Designer</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-            sint doloremque in tempora pariatur at fuga iste harum odit nostrum.
-          </p>
-          <div class="btn-box service-btn">
-            <a href="#" class="btn">Read More</a>
-          </div>
+      <div class="experience">
+        <div class="tab">
+          <button
+            class="tablinks active"
+            onclick="openExperience(event, 'Job1')"
+            id="defaultOpen"
+          >
+            Namibra Inc.
+          </button>
+          <button class="tablinks" onclick="openExperience(event, 'Job2')">
+            Paahibu Space
+          </button>
+          <button class="tablinks" onclick="openExperience(event, 'Job3')">
+            Noni Hub
+          </button>
         </div>
-        <div class="services-box">
-          <i class="bx bx-code-alt service-icon"></i>
-          <h3>Web Designer</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-            sint doloremque in tempora pariatur at fuga iste harum odit nostrum.
-          </p>
-          <div class="btn-box service-btn">
-            <a href="#" class="btn">Read More</a>
+
+        <div id="Job1" class="tabcontent" style="display: block">
+          <div class="icon-container">
+            <i class="bx bx-code-alt tab-icon"></i>
           </div>
+          <h3>Front-end Developer @ Namibra Inc</h3>
+          <p class="exp-duration my-3">2024 - Present (Internship)</p>
+          <p class="excerpt">
+            As a Front-End Developer Intern at Namibra Inc, I'm responsible for
+            designing and building innovative web applications that drive
+            business success. <br />My key responsibilities included: <br />-
+            Assisting with web development projects: Collaborating with the
+            development team to implement new features and enhancements.
+          </p>
+          <p class="full-text">
+            - Learning front-end technologies: <br />
+            - Contributing to UI/UX design: <br />
+            - Working on cross-functional teams: <br />
+            - Learning from experienced professionals: <br />
+            - Through my internship, I had the opportunity to work on specific
+            projects and tasks. I learned valuable skills and gained a deeper
+            understanding of the front-end development process. I am grateful
+            for the opportunity to have been part of the Namibra Inc. team and
+            look forward to continuing to contribute to the field of technology
+            and entrepreneurship.
+          </p>
+          <button class="read-more-btn" onclick="toggleText(this)">
+            Read More
+          </button>
         </div>
-        <div class="services-box">
-          <i class="bx bx-desktop service-icon"></i>
-          <h3>Web Designer</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-            sint doloremque in tempora pariatur at fuga iste harum odit nostrum.
-          </p>
-          <div class="btn-box service-btn">
-            <a href="#" class="btn">Read More</a>
+
+        <div id="Job2" class="tabcontent">
+          <div class="icon-container">
+            <i class="bx bxs-layer tab-icon"></i>
           </div>
+          <h3>Front-end Developer @ Paahibu Space.</h3>
+          <p class="exp-duration my-3">2023 - Present (Internship)</p>
+          <p class="excerpt">
+            As a Front-End Developer at Paahibu Space, I gained valuable
+            experience in building web applications and contributing to our
+            mission of empowering women-led businesses.
+            <br />
+            My key responsibilities include: <br />- Creating user-friendly
+            interfaces: Designing intuitive and visually appealing user
+            interfaces that meet the needs of our target audience.
+          </p>
+          <p class="full-text">
+            - Developing responsive web applications: <br />- Implementing
+            modern web technologies:
+
+            <br />- Collaborating with the team: <br />
+            - Received positive feedback from users and stakeholders for my
+            contributions. <br />
+            - Gained valuable experience working in a collaborative team
+            environment. <br />
+            I am eager to continue developing my front-end skills and
+            contributing to innovative projects that make a positive impact.
+          </p>
+          <button class="read-more-btn" onclick="toggleText(this)">
+            Read More
+          </button>
+        </div>
+
+        <div id="Job3" class="tabcontent">
+          <div class="icon-container">
+            <i class="bx bx-desktop tab-icon"></i>
+          </div>
+          <h3>Front-end Developer @ Noni Hub</h3>
+          <p class="exp-duration my-3">2023 - Present (Internship)</p>
+          <p class="excerpt">
+            As a Front-End Developer Intern and Volunteer at Noni Hub, I gained
+            valuable experience working on innovative technology projects and
+            contributing to the local community.
+
+            <br />My responsibilities included: <br />
+
+            - Developing web applications: Building and maintaining web
+            applications for Noni Hub's various programs and initiatives.
+          </p>
+          <p class="full-text">
+            - Collaborating with a team:
+            <br />
+            - Learning new technologies: <br />
+            - Contributing to open-source projects: <br />
+            - Mentoring young developers: <br />
+            <br />
+            Through my internship and volunteer work at Noni Hub, I was able to:
+            <br />
+
+            - Gain practical experience: <br />
+            - Learn from experienced professionals: <br />
+            - Contribute to a meaningful cause: <br />
+            - Build a professional network: <br />
+          </p>
+          <button class="read-more-btn" onclick="toggleText(this)">
+            Read More
+          </button>
         </div>
       </div>
     </section>
@@ -247,7 +328,7 @@
               <h3>Technical Skills</h3>
               <div class="skill-bar">
                 <div class="info">
-                  <p>HTML</p>
+                  <p>HTML/CSS/Bootstrap</p>
                   <p>92%</p>
                 </div>
                 <div class="bar">
@@ -257,7 +338,7 @@
 
               <div class="skill-bar">
                 <div class="info">
-                  <p>Figma</p>
+                  <p>Git & Github</p>
                   <p>79%</p>
                 </div>
                 <div class="bar">
@@ -277,8 +358,8 @@
 
               <div class="skill-bar">
                 <div class="info">
-                  <p>CSS</p>
-                  <p>86%</p>
+                  <p>PHP/React</p>
+                  <p>52%</p>
                 </div>
                 <div class="bar">
                   <span class="css"></span>
@@ -305,12 +386,12 @@
                   <div class="circle" data-dots="80" data-percent="80"></div>
                   <div class="text">
                     <big>80%</big>
-                    <small>Creativity</small>
+                    <small>Management</small>
                   </div>
                 </div>
 
                 <div class="box">
-                  <div class="circle" data-dots="80" data-percent=""></div>
+                  <div class="circle" data-dots="80" data-percent="89"></div>
                   <div class="text">
                     <big>89%</big>
                     <small>Communicatiion</small>
@@ -321,7 +402,7 @@
                   <div class="circle" data-dots="80" data-percent="79"></div>
                   <div class="text">
                     <big>79%</big>
-                    <small>Management</small>
+                    <small>innovation</small>
                   </div>
                 </div>
               </div>
