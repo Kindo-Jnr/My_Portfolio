@@ -37,49 +37,19 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg py-3" id="navbar">
-      <div class="container">
-        <a class="navbar-brand text-white" href="index.html" id="logo">
-          <img src="images/logo2.png" alt="" width="45" />
-          <span>K</span>indo</a
-        >
+     <header class="fixed-top">
+   <div class="logo"><img src="/images/logo2.png" alt=""><span>K</span>indo</div>
+  <ul class="navlist">
+<li><a href="#home" style="--i:1">Home</a></li>
+<li><a href="#about" style="--i:2">About</a></li>
+<li><a href="#experience" style="--i:3">Expereince</a></li>
+<li><a href="#skills" style="--i:4">Skills</a></li>
+<li><a href="#portfolio" style="--i:5">Portfoilio</a></li>
+<li><a href="#contact" style="--i:6">Contact</a></li>
+  </ul>
+<div id="menu-icon" class="bx bx-menu"></div>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mynavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="mynavbar"
-        >
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#experience">Expereince</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#skills">Skills</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  </header>
     <!-- nav end -->
 
     <!-- Home Section -->
@@ -107,10 +77,10 @@
               </div>
 
               <div class="social-icons mt-4">
-                <a href="#" class="me-3"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="me-3"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="me-3"><i class="bx bxl-twitter"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Facebook" data-bs-toggle="tooltip" title="Facebook" class="me-3"><i class="bx bxl-facebook"></i></a>
+                <a href="#" aria-label="Instagram" data-bs-toggle="tooltip" title="Instagram" class="me-3"><i class="bx bxl-instagram"></i></a>
+                <a href="#" aria-label="Twitter" data-bs-toggle="tooltip" title="Twitter" class="me-3"><i class="bx bxl-twitter"></i></a>
+                <a href="#" aria-label="Linkedin" data-bs-toggle="tooltip" title="Linkedin"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -604,7 +574,7 @@
                   ></textarea>
                 </div>
                 <div class="col-12">
-                  <div class="btn-box formBtn">
+                  <div class="btn-box formBtn mb-4">
                     <button type="submit" class="btn">Send Message</button>
                   </div>
                 </div>
@@ -637,11 +607,23 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="mixitup.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     
+
     <script src="script.js"></script>
     <script>
       AOS.init({
         once: true,
       });
     </script>
+   
+    
+     <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+          var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl);
+          });
+      });
+  </script>
   </body>
 </html>

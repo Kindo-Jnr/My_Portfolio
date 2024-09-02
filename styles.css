@@ -23,24 +23,73 @@
     0 0 80px rgba(18, 247, 255, 0.3), 0 0 100px rgba(18, 247, 255, 0.3),
     0 0 150px rgba(18, 247, 255, 0.3);
 }
+
+/* Scrollbar------------- */
+::-webkit-scrollbar{
+  height: 0;
+  width: 0.5rem;
+
+}
+::-webkit-scrollbar-track{
+  background: var(--second-bg-color);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--hover-color);
+  border-radius: 5rem;
+}
+
+
+
 body {
   font-family: "poppins", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  padding-top: 70px;
 }
-#logo span {
+header{
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 10%;
+}
+header.sticky{
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--second-bg-color);
+  padding: 12px 10%;
+}
+.logo{
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 50px;
+  margin-right: 5px;
+}
+span{
   color: var(--hover-color);
 }
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28165, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-#mynavbar {
-  color: var(--text-color);
-  font-weight: 500;
-  padding: 10px 20px;
+.navlist{
+  display: flex;
   
 }
-.navbar-nav .nav-link:hover {
+.navlist a{
+  display: inline-block;
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 20px;
+  animation: slideAnimation 1s ease forwards;
+  animation-delay: calc(.3s * var(--i));
+opacity: 0;  
+}
+
+.navlist a:hover {
   color: var(--hover-color) !important;
   text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
     0 0 20px rgba(18, 247, 255, 0.6), 0 0 30px rgba(18, 247, 255, 0.6),
@@ -48,10 +97,77 @@ body {
     0 0 80px rgba(18, 247, 255, 0.6), 0 0 100px rgba(18, 247, 255, 0.6),
     0 0 150px rgba(18, 247, 255, 0.6);
 }
+#menu-icon{
+  font-size: 1.8rem;
+  z-index: 10001;
+  cursor: pointer;
+  margin-left: 25px;
+  background: var(--hover-color);
+  border-radius: 3px;
+  color: var(--second-bg-color);
+  display: none;
+}
+.navlist a.active {
+  font-weight: bold;
+  color: var(--hover-color) !important;
+}
 
 section {
   padding: 10px 8%;
 }
+/* Responsiveness */
+@media (max-width: 990px){
+header,
+header.sticky{
+  padding: 15px 5%;
+}
+.navlist{
+  padding: 8px 15px;
+}
+:root{
+  --big-font: 2.2rem;
+  --normal-font: 1.8rem;
+  --neon-box-shaddow: 0 0 0.8rem #12f7ff;
+  --h2-font: 3rem;
+}
+.home-content{
+  margin-top: 5rem;
+}
+}
+
+@media(max-width: 768px){
+  #menu-icon{
+    display: block;
+    transition: all .4s ease;
+  }
+  #menu-icon.bx-x {
+    transform: rotate(-180deg);
+  }
+  .navlist{
+    display: flex;
+    position: absolute;
+    top: -1000px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    background: var(--bg-color);
+    text-align: left;
+    padding: 0 5%;
+    transition: all .4s ease;
+  }
+  .navlist a{
+    display: block;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .navlist.open{
+    top: 100%;
+  }
+}
+
+
+
+
 
 /* Home Section */
 
@@ -467,11 +583,12 @@ img-box {
   cursor: pointer;
   font-size: 14px;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .read-more-btn:hover {
   background-color: #007ea7;
+  transform: scale(1.05);
 }
 
 @keyframes fadeEffect {
@@ -900,7 +1017,17 @@ footer a:hover{
   }
 }
 
-
+/* Tooltip------------- */
+.tooltip-inner {
+  color: #ffffff; /* Text color */
+  background-color: #000000; /* Background color */
+  border: 1px solid #ffffff; /* Optional: Add a border */
+  padding: 8px; /* Optional: Adjust padding */
+  font-size: 14px; /* Optional: Adjust font size */
+}
+.tooltip-arrow {
+  border-top-color: #000000; /* Arrow color */
+}
 
 
 
@@ -914,6 +1041,18 @@ footer a:hover{
 
 
 /* KeyFrames */
+@keyframes slideAnimation{
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 @keyframes morph {
   0%,
