@@ -169,4 +169,58 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
 
+ // Reviews Section
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+let carouselDom = document.querySelector('.carousel');
+let listItemDom = document.querySelector('.carousel .list');
+let thumbnailDom = document.querySelector('.carousel .thumbnail');
 
+let runtime = 3000; // Animation duration
+let timeAutoNext = 7000; // Auto-slide interval
+let runtimeout;
+let runAutoRun;
+
+// Event Listeners for Next and Previous Buttons
+nextDom.onclick = function () {
+    showSlider('next');
+};
+prevDom.onclick = function () {
+    showSlider('prev');
+};
+
+// Function to Show the Next/Previous Slide
+function showSlider(type) {
+    let itemSlider = document.querySelectorAll('.carousel .list .item');
+    let itemThumbnail = document.querySelectorAll('.carousel .thumbnail .item');
+
+    if (type === 'next') {
+        listItemDom.appendChild(itemSlider[0]); // Move the first item to the end
+        thumbnailDom.appendChild(itemThumbnail[0]); // Move the first thumbnail to the end
+        carouselDom.classList.add('next');
+    } else if (type === 'prev') {
+        let lastIndex = itemSlider.length - 1;
+        listItemDom.prepend(itemSlider[lastIndex]); // Move the last item to the start
+        thumbnailDom.prepend(itemThumbnail[lastIndex]); // Move the last thumbnail to the start
+        carouselDom.classList.add('prev');
+    }
+    
+
+    // Clear and Reset Timeout for Class Removal
+    clearTimeout(runtimeout);
+    runtimeout = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+    }, runtime);
+
+    // Restart Auto-Run Timer
+    clearTimeout(runAutoRun);
+    runAutoRun = setTimeout(() => {
+        showSlider('next');
+    }, timeAutoNext);
+}
+
+// Auto-run the Next Slide
+runAutoRun = setTimeout(() => {
+    showSlider('next');
+}, timeAutoNext);
