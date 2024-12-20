@@ -375,7 +375,11 @@ img-box {
   border-radius: 10px;
   box-shadow: 0px 10px 10px -6px var(--hover-color);
 }
-
+@media (max-width: 798px){
+  .btn-box .btn{
+    box-shadow: none;
+  }
+}
 /* About Section */
 .about {
   display: flex;
@@ -891,6 +895,9 @@ background: linear-gradient(rgba(0, 0, 0, 0.4), #00509e);
     font-size: 25px;
     color: var(--second-bg-color);
   } 
+  .port-box{
+    box-shadow: none;
+  }
 }
 
 /* Reviews Section-------------------------- */
@@ -1165,8 +1172,24 @@ left: 0;
 /* mobile view */
 @media  screen and (max-width: 996px) {
   .carousel{
-    width: 133vw;
+    width: 100vw;
   }
+  .thumbnail{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 10px;
+
+}
+.thumbnail .item{
+  width: 80px;
+  height: 140px;
+  flex-shrink: 0;
+  position: relative;
+}
   .carousel .list .item .content{
     padding-right: 0;
   }
