@@ -127,7 +127,7 @@ header.sticky{
 :root{
   --big-font: 2.2rem;
   --normal-font: 1.8rem;
-  --neon-box-shaddow: 0 0 0.8rem #12f7ff;
+  --neon-box-shaddow: 0 0 0.8rem #00509e;
   --h2-font: 3rem;
 }
 .home-content{
@@ -337,7 +337,7 @@ header.sticky{
   color: var(--hover-color);
   border: 2px solid var(--hover-color);
   transition: 0.6s;
-  box-shadow: 0 0 0.3rem #12f7ff;
+  box-shadow: 0 0 0.3rem #00509e;
   border-radius: 5px;
   position: relative;
   z-index: 1;
@@ -464,7 +464,7 @@ img-box {
     margin-left: 0px;
   }
   .about-content p{
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .about .img-about{
     padding: 0;
@@ -598,9 +598,9 @@ img-box {
 }
 .icon-container {
   display: flex;
-  justify-content: center; /* Center the icon horizontally */
-  align-items: center; /* Center the icon vertically if needed */
-  margin-bottom: 16px; /* Space below the icon */
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 16px; 
 }
 .tab-icon {
   border: 2px solid var(--hover-color);
@@ -625,7 +625,7 @@ img-box {
       padding: 12px;
   }
   .tabcontent p{
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .tab-icon {
       font-size: 40px;
@@ -789,7 +789,7 @@ img-box {
   transition: 0.5s;
 }
 .filter-buttons .btn:hover{
- color: #12f7ff !important;
+ color: #00509e !important;
 }
 
 .portfolio-gallery{
@@ -1145,7 +1145,7 @@ letter-spacing: 10px;
 .time{
   width: 0%;
   height: 5px;
-  background-color: #f168f1;
+  background-color: ;
   position: absolute;
   z-index: 100;
   top: 0;
