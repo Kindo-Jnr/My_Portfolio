@@ -832,9 +832,9 @@ img-box {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), #00509e);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), #00509e);
   animation: fadeInRight  1.5s ease-in;
-
+color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -845,7 +845,7 @@ padding: 0.2rem;
 }
 .port-box:hover .port-content{
 opacity: 1;
-background: linear-gradient(rgba(0, 0, 0, 0.4), #12f7ff);
+background: linear-gradient(rgba(0, 0, 0, 0.4), #00509e);
 }
 .port-box:hover .port-img img{
   transform: scale(1.1);
