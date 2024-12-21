@@ -635,7 +635,7 @@ img-box {
     font-size: 1rem;
   }
   .tab-icon {
-      font-size: 20px;
+      font-size: 2rem;
   }
 
   .read-more-btn {
@@ -862,7 +862,7 @@ background: linear-gradient(rgba(0, 0, 0, 0.4), #00509e);
   font-weight: 600;
 }
 .port-content p{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 5px 0 15px 0;
 }
 .port-content a{
@@ -1179,10 +1179,13 @@ left: 0;
   .carousel{
     width: 100vw;
   }
+  .carousel .list .item .content{
+    top: 10%;
+  }
   .thumbnail{
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 40%;
   width: max-content;
   z-index: 100;
   display: flex;
@@ -1204,6 +1207,19 @@ left: 0;
   .arrows{
     right: 60%;
   }
+  @keyframes outimage {
+    to{
+      width: 80px;
+      height: 140px;
+      border-radius: 20px;
+      left: 40%;
+      bottom: 50px;
+    }
+  }
+  @keyframes showthumbnail {
+    to{
+      width: 80px;
+    }
 }
 
 /* Contact Section------------------ */
