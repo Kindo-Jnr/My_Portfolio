@@ -1,73 +1,11 @@
-// ==================== Splash Page Logic ====================
-const splashPage = document.querySelector('.splash-page');
-
-if (splashPage) {
-  const helloContainer = document.getElementById('hello-container');
-  const timerText = document.getElementById('timer-text');
-  const progressCircle = document.querySelector('.progress-ring-circle');
-  
-
-  // "Hello" in different languages
-  const hellos = [
-    "Hello", // English
-    "Hola", // Spanish
-    "Bonjour", // French
-    "Ciao", // Italian
-    "Hallo", // German
-    "こんにちは", // Japanese (Konnichiwa)
-    "Welcome!", // Welcome
-  ];
-  let index = 0;
-
-  // Timer settings
-  let progress = 0; // Start at 0%
-  const duration = 7000; // 3 seconds
-  const intervalTime = 70; // Update every 30ms for smooth animation
-  const steps = duration / intervalTime; // Total number of steps
-  const increment = 100 / steps; // Percentage increment per step
-  const circumference = 283; // Circumference of the circle (2 * π * r)
-
-  // Function to flash "Hello" in different languages
-  function flashHellos() {
-    helloContainer.textContent = hellos[index];
-    index = (index + 1) % hellos.length; // Cycle through the array
-  }
-
-  // Function to update the timer and progress circle
-  function updateTimer() {
-    progress += increment;
-    const offset = circumference - (progress / 100) * circumference;
-    progressCircle.style.strokeDashoffset = offset;
-    timerText.textContent = `${Math.min(Math.round(progress), 100)}%`;
-
-    if (progress >= 100) {
-      clearInterval(flashInterval);
-      clearInterval(timerInterval);
-      // Play a sound effect
-      const sound = new Audio('sounds/complete.mp3'); // Add a sound file
-      sound.play();
-      document.body.style.opacity = '0'; // Fade out the page
-      setTimeout(() => {
-        window.location.href = "main.html"; // Redirect after fade-out
-      }, 500); // Match the duration of the fade-out
-    }
-  }
-
-  // Start flashing "Hello" every 500ms
-  const flashInterval = setInterval(flashHellos, 1000);
-
-  // Start the progress timer
-  const timerInterval = setInterval(updateTimer, intervalTime);
-
-  // Skip button functionality
-  skipButton.addEventListener('click', () => {
-    clearInterval(flashInterval);
-    clearInterval(timerInterval);
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-      window.location.href = "main.html";
-    }, 700);
-  });
+// Check if the user came from the splash page by looking for the splash parameter
+const urlParams = new URLSearchParams(window.location.search);
+if (!urlParams.has("splash")) {
+    // No splash parameter? Redirect to the splash page
+    window.location.href = "index.html";
+} else {
+    // Remove the splash parameter from the URL after the check
+    window.history.replaceState(null, "", window.location.pathname);
 }
 
 // ==================== Existing JavaScript ====================
